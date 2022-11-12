@@ -9,7 +9,7 @@ class IndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-      const Background(),
+      const Backgroud(),
       Scaffold(
           backgroundColor: Colors.transparent,
           body: SafeArea(
