@@ -1,18 +1,24 @@
+import 'dart:ui';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class DashboadPage extends StatelessWidget {
-  DashboadPage({super.key});
+class DashBoadPage extends StatefulWidget {
+  const DashBoadPage({super.key});
 
+  @override
+  State<DashBoadPage> createState() => _DashBoadPageState();
+}
+
+class _DashBoadPageState extends State<DashBoadPage> {
   List<String> images = [
-    "assets/logo.png",
-    "assets/shop.png",
-    "assets/House.png"
+    "assets/mercedes.png",
+    "assets/dog.png",
+    "assets/House.png",
   ];
-  List<String> prductTitle = ["car", "sofa", "chair"];
-  List<String> productDetails = ["c", "s", "c"];
-  List<String> productstastus = ["222", "983", "332"];
+  List<String> prductTitle = ["Mercedes", "Dog", "House"];
+  List<String> productDetails = ["Auction End", "Auction End", "Action Start"];
+  List<String> productStatus = ["4hr 55mins", "2hr 15mins", "4hr 5mins"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -328,27 +334,59 @@ class DashboadPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(right: 250.0),
               child: Text(
-                "Item Category",
+                "Iive Auction",
                 style: TextStyle(),
               ),
             ),
-            // ListView.builder(
-            //   itemCount: prductTitle.length,
-            //   itemBuilder: (context, index) {
-            //     return ListTile(
-            //       leading: CircleAvatar(
-            //           child: CircleAvatar(
-            //               backgroundImage: AssetImage(images[index][0]),
-            //               radius: 30)),
-            //       title: Text(prductTitle[index]),
-            //       subtitle: Text(productDetails[index]),
-            //       trailing: Text(productstastus[index].toString()),
-            //     );
-            //   },
-            // )
+            const SizedBox(
+              height: 10,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: prductTitle.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  decoration: const BoxDecoration(color: Colors.white),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                        child: CircleAvatar(
+                            backgroundImage: AssetImage(images[index]),
+                            radius: 20)),
+                    title: Text(prductTitle[index]),
+                    subtitle: Text(productDetails[index]),
+                    trailing: Container(
+                      padding: EdgeInsets.all(7),
+                      color: Color.fromARGB(255, 241, 32, 17),
+                      child: Text(
+                        "LIVE",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            )
           ])),
         ));
   }
 }
 
-const int itemCount = 10;
+//   Widget buildList() => ListView.builder(
+//         itemCount: prductTitle.length,
+//         itemBuilder: (context, index) {
+//           return Container(
+//             margin: const EdgeInsets.only(bottom: 10),
+//             decoration: const BoxDecoration(color: Colors.amber),
+//             child: ListTile(
+//               leading: CircleAvatar(
+//                   child: CircleAvatar(
+//                       backgroundImage: AssetImage(images[index]), radius: 30)),
+//               title: Text(prductTitle[index]),
+//               subtitle: Text(productDetails[index]),
+//               trailing: Text(productstastus[index].toString()),
+//             ),
+//           );
+//         },
+//       );
+// }

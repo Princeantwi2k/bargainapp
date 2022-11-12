@@ -125,7 +125,7 @@ class OptPage extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => DashboadPage()));
+                      builder: (BuildContext context) => DashBoadPage()));
                 },
                 child: Container(
                     padding: const EdgeInsets.all(20),
