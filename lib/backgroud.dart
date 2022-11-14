@@ -39,7 +39,7 @@ Widget buildimage(String urlimage, int index) => Container(
       image: DecorationImage(
         image: AssetImage(urlimage),
         fit: BoxFit.cover,
-        colorFilter:
-            ColorFilter.mode(Color.fromARGB(160, 0, 0, 0), BlendMode.darken),
+        colorFilter: const ColorFilter.mode(
+            Color.fromARGB(160, 0, 0, 0), BlendMode.darken),
       ),
     ));

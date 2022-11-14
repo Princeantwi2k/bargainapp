@@ -40,6 +40,8 @@ dependencies:
   google_fonts: ^3.0.1
   dropdown_button2: ^1.8.9
   smooth_page_indicator: ^1.0.0+2
+  intl_phone_number_input: ^0.7.1
+  syncfusion_flutter_datepicker: ^20.3.56
  
 
 dev_dependencies:

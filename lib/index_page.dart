@@ -1,5 +1,6 @@
 import 'package:bargain/backgroud.dart';
 import 'package:bargain/register_page.dart';
+import 'package:bargain/visit_dashboad_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
@@ -126,11 +127,18 @@ class IndexPage extends StatelessWidget {
                       child: Row(
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
-                          const Text("Enter on Vistor ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                  color: Colors.orange)),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const VisitDashboad()));
+                            },
+                            child: const Text("Enter on Vistor ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                    color: Colors.orange)),
+                          ),
                         ],
                       ),
                     )

@@ -1,11 +1,23 @@
-import 'package:bargain/create_account_number.dart';
 import 'package:bargain/create_account_page.dart';
 import 'package:bargain/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class CreateAccountWithNumber extends StatefulWidget {
+  const CreateAccountWithNumber({super.key});
+
+  @override
+  State<CreateAccountWithNumber> createState() =>
+      _CreateAccountWithNumberState();
+}
+
+class _CreateAccountWithNumberState extends State<CreateAccountWithNumber> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController controller = TextEditingController();
+  String initialCountry = 'NG';
+  PhoneNumber number = PhoneNumber(isoCode: 'NG');
 
   @override
   Widget build(BuildContext context) {
@@ -41,31 +53,51 @@ class RegisterPage extends StatelessWidget {
                 height: 25,
               ),
               //email testfild
-
-              const SizedBox(
-                height: 10,
-              ),
-              //password testfild
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12)),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 20.0, top: 8, bottom: 8),
-                    child: TextField(
-                      obscureText: true,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Enter your email",
-                      ),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12)),
+                child: Form(
+                  key: formKey,
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        InternationalPhoneNumberInput(
+                          onInputChanged: (PhoneNumber number) {
+                            print(number.phoneNumber);
+                          },
+                          onInputValidated: (bool value) {
+                            print(value);
+                          },
+                          selectorConfig: SelectorConfig(
+                            selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                          ),
+                          ignoreBlank: false,
+                          autoValidateMode: AutovalidateMode.disabled,
+                          selectorTextStyle: TextStyle(color: Colors.black),
+                          initialValue: number,
+                          textFieldController: controller,
+                          formatInput: false,
+                          keyboardType: TextInputType.numberWithOptions(
+                              signed: true, decimal: true),
+                          onSaved: (PhoneNumber number) {
+                            print('On Saved: $number');
+                          },
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              //password testfild
+
               const SizedBox(
                 height: 10,
               ),
@@ -78,14 +110,11 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: GestureDetector(
-                  onTap: () => {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            CreateAccountWithNumber()))
-                  },
+                  onTap: () => {Navigator.pop(context)},
                   child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
@@ -95,7 +124,7 @@ class RegisterPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12)),
                       child: const Center(
                           child: Text(
-                        "Use Phone",
+                        "Use Email",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ))),
@@ -161,5 +190,20 @@ class RegisterPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void getPhoneNumber(String phoneNumber) async {
+    PhoneNumber number =
+        await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'US');
+
+    setState(() {
+      this.number = number;
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }

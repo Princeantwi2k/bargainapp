@@ -1,8 +1,21 @@
 import 'package:bargain/confirm_password_page.dart';
+import 'package:bargain/login_page.dart';
 import 'package:flutter/material.dart';
 
-class CreateAccount extends StatelessWidget {
+import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+
+class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
+
+  @override
+  State<CreateAccount> createState() => _CreateAccountState();
+}
+
+class _CreateAccountState extends State<CreateAccount> {
+  DateTime date = DateTime(2022, 12, 24);
+
+  TextEditingController _date = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +107,7 @@ class CreateAccount extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0, top: 8, bottom: 8),
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Enter mobile number",
@@ -106,24 +120,56 @@ class CreateAccount extends StatelessWidget {
                 height: 10,
               ),
               //password testfild
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //         color: Colors.white,
+              //         border: Border.all(color: Colors.white),
+              //         borderRadius: BorderRadius.circular(12)),
+              //     child: const Padding(
+              //       padding: EdgeInsets.only(left: 20.0, top: 8, bottom: 8),
+              //       child: TextField(
+              //         decoration: InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: "Date of Birth",
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12)),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 20.0, top: 8, bottom: 8),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Date of Birth",
-                      ),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: TextField(
+                    controller: _date,
+                    decoration: const InputDecoration(
+                      icon: Icon(Icons.calendar_today_rounded),
+                      labelText: "select your date of birth",
                     ),
+                    onTap: () async {
+                      DateTime? pickerdate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2100));
+
+                      if (pickerdate != null) {
+                        setState(() {
+                          _date.text =
+                              DateFormat("yyyy-MM-dd").format(pickerdate);
+                        });
+                      }
+                    },
                   ),
                 ),
               ),
+
               const SizedBox(
                 height: 10,
               ),
@@ -168,11 +214,13 @@ class CreateAccount extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                     GestureDetector(
-                      child: const Text("Sign!",
+                      child: const Text("Sign in!",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.red)),
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const LoginPage()));
                       },
                     ),
                   ],
