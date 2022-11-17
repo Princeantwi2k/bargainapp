@@ -1,3 +1,4 @@
+import 'package:bargain/buyers_visitors_page.dart';
 import 'package:bargain/register_page.dart';
 import 'package:bargain/visit_dashboad_page.dart';
 import 'package:flutter/material.dart';
@@ -159,7 +160,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () => {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            const VisitDashboad()))
+                            const BuyersVisitorsPage()))
                   },
                   child: Container(
                       padding: const EdgeInsets.all(15),

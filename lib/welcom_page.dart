@@ -92,7 +92,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     });
                   },
                   icon: const Icon(
-                    Icons.arrow_drop_down_circle,
+                    Icons.arrow_drop_down,
                     color: Colors.white,
                   ),
                   dropdownColor: Colors.white,

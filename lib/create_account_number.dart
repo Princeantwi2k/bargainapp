@@ -56,40 +56,38 @@ class _CreateAccountWithNumberState extends State<CreateAccountWithNumber> {
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: Form(
                   key: formKey,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        InternationalPhoneNumberInput(
-                          onInputChanged: (PhoneNumber number) {
-                            print(number.phoneNumber);
-                          },
-                          onInputValidated: (bool value) {
-                            print(value);
-                          },
-                          selectorConfig: SelectorConfig(
-                            selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                          ),
-                          ignoreBlank: false,
-                          autoValidateMode: AutovalidateMode.disabled,
-                          selectorTextStyle: TextStyle(color: Colors.black),
-                          initialValue: number,
-                          textFieldController: controller,
-                          formatInput: false,
-                          keyboardType: TextInputType.numberWithOptions(
-                              signed: true, decimal: true),
-                          onSaved: (PhoneNumber number) {
-                            print('On Saved: $number');
-                          },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      InternationalPhoneNumberInput(
+                        onInputChanged: (PhoneNumber number) {
+                          print(number.phoneNumber);
+                        },
+                        onInputValidated: (bool value) {
+                          print(value);
+                        },
+                        selectorConfig: const SelectorConfig(
+                          selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                         ),
-                      ],
-                    ),
+                        ignoreBlank: false,
+                        autoValidateMode: AutovalidateMode.disabled,
+                        selectorTextStyle: TextStyle(color: Colors.black),
+                        initialValue: number,
+                        textFieldController: controller,
+                        formatInput: false,
+                        keyboardType: const TextInputType.numberWithOptions(
+                            signed: true, decimal: true),
+                        onSaved: (PhoneNumber number) {
+                          print('On Saved: $number');
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),
