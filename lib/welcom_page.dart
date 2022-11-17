@@ -76,7 +76,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ],
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 margin: const EdgeInsets.only(right: 50, left: 50),
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.white),
