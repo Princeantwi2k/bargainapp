@@ -1,6 +1,7 @@
-import 'package:bargain/buyers_visitors_page.dart';
-import 'package:bargain/register_page.dart';
-import 'package:bargain/visit_dashboad_page.dart';
+import 'package:bargain/VisitorsPage/buyers_visitors_page.dart';
+import 'package:bargain/Logins/register_page.dart';
+import 'package:bargain/VisitorsPage/root_page.dart';
+import 'package:bargain/VisitorsPage/visit_dashboad_page.dart';
 import 'package:flutter/material.dart';
 import 'opt_page.dart';
 
@@ -159,8 +160,7 @@ class LoginPage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () => {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            const BuyersVisitorsPage()))
+                        builder: (BuildContext context) => const Rootpage()))
                   },
                   child: Container(
                       padding: const EdgeInsets.all(15),

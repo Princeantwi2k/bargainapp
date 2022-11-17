@@ -1,5 +1,5 @@
-import 'package:bargain/confirm_password_page.dart';
-import 'package:bargain/login_page.dart';
+import 'package:bargain/Logins/confirm_password_page.dart';
+import 'package:bargain/Logins/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';

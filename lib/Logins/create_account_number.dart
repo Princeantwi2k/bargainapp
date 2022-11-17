@@ -1,5 +1,5 @@
-import 'package:bargain/create_account_page.dart';
-import 'package:bargain/login_page.dart';
+import 'package:bargain/Logins/create_account_page.dart';
+import 'package:bargain/Logins/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';

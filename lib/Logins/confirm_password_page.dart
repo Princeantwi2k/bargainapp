@@ -1,4 +1,4 @@
-import 'package:bargain/buyer_terms_page.dart';
+import 'package:bargain/Logins/buyer_terms_page.dart';
 import 'package:flutter/material.dart';
 
 class ConfirmAccount extends StatelessWidget {

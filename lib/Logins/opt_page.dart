@@ -1,4 +1,4 @@
-import 'package:bargain/dashboad_page.dart';
+import 'package:bargain/Dashboad/dashboad_page.dart';
 import 'package:flutter/material.dart';
 
 class OptPage extends StatelessWidget {

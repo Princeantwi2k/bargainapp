@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'dashboad_page.dart';
+import '../Dashboad/dashboad_page.dart';
 
 class TermsAndConditions extends StatefulWidget {
   const TermsAndConditions({super.key});

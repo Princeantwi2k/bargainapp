@@ -1,9 +1,10 @@
-import 'package:bargain/backgroud.dart';
-import 'package:bargain/buyers_visitors_page.dart';
-import 'package:bargain/register_page.dart';
-import 'package:bargain/visit_dashboad_page.dart';
+import 'package:bargain/Logins/backgroud.dart';
+import 'package:bargain/VisitorsPage/buyers_visitors_page.dart';
+import 'package:bargain/Logins/register_page.dart';
+import 'package:bargain/VisitorsPage/root_page.dart';
+import 'package:bargain/VisitorsPage/visit_dashboad_page.dart';
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'Logins/login_page.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({super.key});
@@ -132,7 +133,7 @@ class IndexPage extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const BuyersVisitorsPage()));
+                                      const Rootpage()));
                             },
                             child: Row(
                               children: const [

@@ -1,4 +1,4 @@
-import 'package:bargain/visit_dashboad_page.dart';
+import 'package:bargain/VisitorsPage/visit_dashboad_page.dart';
 import 'package:flutter/material.dart';
 
 class BuyersVisitorsPage extends StatefulWidget {
