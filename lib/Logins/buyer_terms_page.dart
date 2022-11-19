@@ -96,7 +96,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => DashBoadPage()));
+                        builder: (BuildContext context) =>
+                            const DashBoadPage()));
                   },
                   child: Container(
                       padding: const EdgeInsets.all(20),

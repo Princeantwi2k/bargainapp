@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class DashBoadPage extends StatefulWidget {
-  const DashBoadPage({super.key});
+  const DashBoadPage({
+    super.key,
+  });
 
   @override
   State<DashBoadPage> createState() => _DashBoadPageState();
