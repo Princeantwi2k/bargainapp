@@ -43,6 +43,8 @@ dependencies:
   intl_phone_number_input: ^0.7.1
   syncfusion_flutter_datepicker: ^20.3.56
   flutter_svg: ^0.17.4
+  animated_bottom_navigation_bar: ^1.1.0
+  page_transition: ^2.0.9
  
 
 dev_dependencies:

@@ -16,24 +16,23 @@ class _DashBoadPageState extends State<DashBoadPage> {
     "assets/dog.png",
     "assets/House.png",
   ];
+
+  List<String> itemCategory = [
+    "assets/account.png",
+    "assets/payment.png",
+    "assets/share.png",
+    "assets/shop.png",
+  ];
+  List<String> CategoryName = ["Pay in", "Cash out", "Track orders", "shop"];
+
   List<String> prductTitle = ["Mercedes", "Dog", "House"];
+
   List<String> productDetails = ["Auction End", "Auction End", "Action Start"];
   List<String> productStatus = ["4hr 55mins", "2hr 15mins", "4hr 5mins"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[200],
-        bottomNavigationBar:
-            // ignore: prefer_const_literals_to_create_immutables
-            NavigationBar(backgroundColor: Colors.white, destinations: [
-          const NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-          const NavigationDestination(
-              icon: Icon(Icons.person), label: "Person"),
-          const NavigationDestination(
-              icon: Icon(Icons.search), label: "search"),
-          const NavigationDestination(
-              icon: Icon(Icons.shopping_cart), label: "cart"),
-        ]),
         appBar: AppBar(
           backgroundColor: Colors.grey[200],
           leading: Container(
@@ -124,91 +123,6 @@ class _DashBoadPageState extends State<DashBoadPage> {
                   const SizedBox(
                     height: 2,
                   ),
-                  Row(
-                    children: [
-                      Container(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, left: 10, right: 10),
-                          margin: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/payment.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              const Text("Pay In",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 12, 86, 109),
-                                  ))
-                            ],
-                          )),
-                      Container(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, left: 20, right: 20),
-                          margin: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/payment.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              const Text("Cash out",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 12, 86, 109),
-                                  ))
-                            ],
-                          )),
-                      Container(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, left: 20, right: 20),
-                          margin: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/share.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              const Text("Track orders",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 12, 86, 109),
-                                    fontSize: 10,
-                                  ))
-                            ],
-                          )),
-                      Container(
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 10, left: 20, right: 20),
-                          margin: const EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/store.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              const Text("Shop",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 12, 86, 109),
-                                  ))
-                            ],
-                          ))
-                    ],
-                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -218,6 +132,60 @@ class _DashBoadPageState extends State<DashBoadPage> {
                       "Item Category",
                       style: TextStyle(),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                      height: 60,
+                      child: ListView.builder(
+                          itemCount: itemCategory.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              width: 100,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 1,
+                                    right: 1,
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      padding: EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(
+                                        child: Column(
+                                          children: [
+                                            Image.asset(
+                                              itemCategory[index],
+                                              height: 20,
+                                              width: 30,
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(CategoryName[index]),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          })),
+                  const SizedBox(
+                    height: 20,
                   ),
                   Container(
                     color: Colors.white,
@@ -281,6 +249,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                   "assets/phone.png",
                                   height: 40,
                                   width: 50,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                               const Text("Electronics"),
@@ -341,6 +310,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                   "assets/House.png",
                                   height: 40,
                                   width: 50,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                               const Text("Car"),

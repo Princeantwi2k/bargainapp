@@ -1,4 +1,4 @@
-import 'package:bargain/Dashboad/dashboad_page.dart';
+import 'package:bargain/Screens/main_root_page.dart';
 import 'package:flutter/material.dart';
 
 import '../VisitorsPage/Product.dart';
@@ -132,7 +132,7 @@ class OptPage extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => const DashBoadPage()));
+                      builder: (BuildContext context) => const MainRootPage()));
                 },
                 child: Container(
                     padding: const EdgeInsets.all(20),

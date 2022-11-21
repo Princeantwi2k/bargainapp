@@ -1,7 +1,6 @@
+import 'package:bargain/Screens/main_root_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../Dashboad/dashboad_page.dart';
 
 class TermsAndConditions extends StatefulWidget {
   const TermsAndConditions({super.key});
@@ -97,7 +96,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            const DashBoadPage()));
+                            const MainRootPage()));
                   },
                   child: Container(
                       padding: const EdgeInsets.all(20),

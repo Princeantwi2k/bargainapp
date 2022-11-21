@@ -1,8 +1,8 @@
 import 'package:bargain/Logins/backgroud.dart';
-import 'package:bargain/VisitorsPage/buyers_visitors_page.dart';
+
 import 'package:bargain/Logins/register_page.dart';
-import 'package:bargain/VisitorsPage/root_page.dart';
-import 'package:bargain/VisitorsPage/visit_dashboad_page.dart';
+import 'package:bargain/VisitorsPage/visit_root_page.dart';
+
 import 'package:flutter/material.dart';
 import 'Logins/login_page.dart';
 

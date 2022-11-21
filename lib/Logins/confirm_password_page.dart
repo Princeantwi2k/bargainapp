@@ -125,7 +125,7 @@ class ConfirmAccount extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                     GestureDetector(
-                      child: const Text("Sign!",
+                      child: const Text("Sign in!",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.red)),
                       onTap: () {
