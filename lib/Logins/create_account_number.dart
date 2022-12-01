@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bargain/Logins/create_account_page.dart';
 import 'package:bargain/Logins/login_page.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +79,7 @@ class _CreateAccountWithNumberState extends State<CreateAccountWithNumber> {
                         ),
                         ignoreBlank: false,
                         autoValidateMode: AutovalidateMode.disabled,
-                        selectorTextStyle: TextStyle(color: Colors.black),
+                        selectorTextStyle: const TextStyle(color: Colors.black),
                         initialValue: number,
                         textFieldController: controller,
                         formatInput: false,

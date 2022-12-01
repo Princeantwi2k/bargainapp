@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "154773870888",
+    "project_id": "bargain-e218d",
+    "storage_bucket": "bargain-e218d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154773870888:android:deab24745f86164a32581d",
+        "android_client_info": {
+          "package_name": "com.example.bargain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154773870888-kk42q16ta04ss5pqimh0v6k590vcn859.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADOXLrBrzCF0Nut3BAOJhAhGvIX_aLOZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154773870888-kk42q16ta04ss5pqimh0v6k590vcn859.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

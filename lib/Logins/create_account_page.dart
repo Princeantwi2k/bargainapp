@@ -15,7 +15,7 @@ class CreateAccount extends StatefulWidget {
 class _CreateAccountState extends State<CreateAccount> {
   DateTime date = DateTime(2022, 12, 24);
 
-  TextEditingController _date = TextEditingController();
+  final TextEditingController _date = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

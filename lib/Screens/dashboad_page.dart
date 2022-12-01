@@ -21,7 +21,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
     "assets/account.png",
     "assets/payment.png",
     "assets/share.png",
-    "assets/shop.png",
+    "assets/store.png",
   ];
   List<String> CategoryName = ["Pay in", "Cash out", "Track orders", "shop"];
 
@@ -145,7 +145,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
                             return Container(
                               width: 100,
                               margin: EdgeInsets.symmetric(
-                                horizontal: 10,
+                                horizontal: 5,
                               ),
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -154,10 +154,10 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                 children: [
                                   Positioned(
                                     top: 1,
-                                    right: 1,
+                                    right: 10,
                                     child: Container(
                                       height: 100,
-                                      width: 100,
+                                      width: 60,
                                       padding: EdgeInsets.all(8),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
@@ -172,8 +172,11 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text(CategoryName[index]),
+                                                  const EdgeInsets.all(.0),
+                                              child: Text(
+                                                CategoryName[index],
+                                                style: TextStyle(fontSize: 10),
+                                              ),
                                             )
                                           ],
                                         ),
