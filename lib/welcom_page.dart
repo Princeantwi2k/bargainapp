@@ -106,7 +106,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => const IndexPage()));
+                        builder: (BuildContext context) => IndexPage()));
                   },
                   child: Container(
                       padding: const EdgeInsets.all(12),

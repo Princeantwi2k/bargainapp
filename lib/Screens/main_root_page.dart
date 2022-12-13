@@ -18,7 +18,7 @@ class _MainRootPageState extends State<MainRootPage> {
 
   List<Widget> pages = const [
     DashBoadPage(),
-    SearchPage(),
+    // SearchPage(),
     CartPage(),
     ProfilePage()
   ];

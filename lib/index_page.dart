@@ -1,10 +1,9 @@
 import 'package:bargain/Logins/backgroud.dart';
+import 'package:bargain/MainAuth/Screens/Authentication/login.dart';
 
-import 'package:bargain/Logins/register_page.dart';
+import 'package:bargain/MainAuth/Screens/Authentication/register.dart';
 import 'package:bargain/VisitorsPage/visit_root_page.dart';
-
 import 'package:flutter/material.dart';
-import 'Logins/login_page.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({super.key});
@@ -101,7 +100,7 @@ class IndexPage extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const RegisterPage()));
+                                  RegisterPage()));
                         },
                         child: Container(
                             padding: const EdgeInsets.all(20),

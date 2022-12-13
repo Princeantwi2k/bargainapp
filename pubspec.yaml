@@ -49,6 +49,12 @@ dependencies:
   flutter_native_timezone: ^2.0.0
   rxdart: ^0.27.7
   pusher_beams: ^1.1.1
+  http: ^0.13.5
+  get: ^4.6.5
+  shared_preferences: ^2.0.15
+  provider: ^6.0.4
+  flutter_spinkit: ^5.1.0
+  
   
  
  

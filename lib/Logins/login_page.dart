@@ -102,7 +102,6 @@ class LoginPage extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0),
                     child: TextField(
-                      obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Enter your Password",

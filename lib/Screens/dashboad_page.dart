@@ -23,7 +23,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
     "assets/share.png",
     "assets/store.png",
   ];
-  List<String> CategoryName = ["Pay in", "Cash out", "Track orders", "shop"];
+  List<String> CategoryName = ["Pay in", "Cash ", "Track ", "shop"];
 
   List<String> prductTitle = ["Mercedes", "Dog", "House"];
 
@@ -154,7 +154,7 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                 children: [
                                   Positioned(
                                     top: 1,
-                                    right: 10,
+                                    left: 15,
                                     child: Container(
                                       height: 100,
                                       width: 60,
@@ -170,14 +170,25 @@ class _DashBoadPageState extends State<DashBoadPage> {
                                               height: 20,
                                               width: 30,
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(.0),
-                                              child: Text(
-                                                CategoryName[index],
-                                                style: TextStyle(fontSize: 10),
+                                            Center(
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(4.0),
+                                                child: Text(
+                                                  CategoryName[index],
+                                                  style:
+                                                      TextStyle(fontSize: 12),
+                                                ),
                                               ),
-                                            )
+                                            ),
+                                            // Padding(
+                                            //   padding:
+                                            //       const EdgeInsets.all(4.0),
+                                            //   child: Text(
+                                            //     CategoryName[index],
+                                            //     style: TextStyle(fontSize: 10),
+                                            //   ),
+                                            // )
                                           ],
                                         ),
                                       ),
